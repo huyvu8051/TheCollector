@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 import WatchConnectivity
 
 struct ContentView: View {
@@ -7,8 +8,19 @@ struct ContentView: View {
     var body: some View {
         Text("Waiting for audio...")
             .onAppear {
+                requestMicrophonePermission()
                 setupWatchConnectivity()
             }
+    }
+
+    func requestMicrophonePermission() {
+        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+            if granted {
+                print("Microphone permission granted")
+            } else {
+                print("Microphone permission denied")
+            }
+        }
     }
 
     func setupWatchConnectivity() {
@@ -24,7 +36,6 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
     static let shared = WatchSessionDelegate()
 
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        // Handle activation state
         if let error = error {
             print("WCSession activation failed with error: \(error.localizedDescription)")
         } else {
@@ -33,7 +44,6 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
     }
 
     func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
-        // Save received audio data to a temporary file and upload to server
         let tempDir = FileManager.default.temporaryDirectory
         let audioURL = tempDir.appendingPathComponent("receivedRecording.m4a")
         do {
@@ -74,7 +84,6 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
         }.resume()
     }
 
-    // Required methods to conform to WCSessionDelegate
     func sessionDidBecomeInactive(_ session: WCSession) {
         // Handle session inactive state
     }

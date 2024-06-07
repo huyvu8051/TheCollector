@@ -20,8 +20,19 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            self.setupRecorder()
-            self.setupWatchConnectivity()
+            requestMicrophonePermission()
+            setupRecorder()
+            setupWatchConnectivity()
+        }
+    }
+
+    func requestMicrophonePermission() {
+        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+            if granted {
+                print("Microphone permission granted")
+            } else {
+                print("Microphone permission denied")
+            }
         }
     }
 
@@ -92,7 +103,6 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
     static let shared = WatchSessionDelegate()
 
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        // Handle activation state
         if let error = error {
             print("WCSession activation failed with error: \(error.localizedDescription)")
         } else {
@@ -100,7 +110,6 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
         }
     }
 
-    // Required methods to conform to WCSessionDelegate
     func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
         // Handle received message data
     }
