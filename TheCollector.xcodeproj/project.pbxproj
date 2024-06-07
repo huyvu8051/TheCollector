@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		042B0EC62C1370CD00C713EC /* TheCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0EC52C1370CD00C713EC /* TheCollectorApp.swift */; };
+		042B0EC82C1370CD00C713EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0EC72C1370CD00C713EC /* ContentView.swift */; };
+		042B0ECA2C1370CE00C713EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042B0EC92C1370CE00C713EC /* Assets.xcassets */; };
+		042B0ECD2C1370CE00C713EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042B0ECC2C1370CE00C713EC /* Preview Assets.xcassets */; };
+		042B0ED32C1370CE00C713EC /* TheCollector Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 042B0ED22C1370CE00C713EC /* TheCollector Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		042B0ED82C1370CE00C713EC /* TheCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0ED72C1370CE00C713EC /* TheCollectorApp.swift */; };
+		042B0EDA2C1370CE00C713EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0ED92C1370CE00C713EC /* ContentView.swift */; };
+		042B0EDC2C1370CF00C713EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042B0EDB2C1370CF00C713EC /* Assets.xcassets */; };
+		042B0EDF2C1370CF00C713EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042B0EDE2C1370CF00C713EC /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		042B0ED42C1370CE00C713EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 042B0EBA2C1370CC00C713EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 042B0ED12C1370CE00C713EC;
+			remoteInfo = "TheCollector Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		042B0EE52C1370CF00C713EC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				042B0ED32C1370CE00C713EC /* TheCollector Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		042B0EC22C1370CD00C713EC /* TheCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		042B0EC52C1370CD00C713EC /* TheCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCollectorApp.swift; sourceTree = "<group>"; };
+		042B0EC72C1370CD00C713EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		042B0EC92C1370CE00C713EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		042B0ECC2C1370CE00C713EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		042B0ED22C1370CE00C713EC /* TheCollector Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheCollector Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		042B0ED72C1370CE00C713EC /* TheCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCollectorApp.swift; sourceTree = "<group>"; };
+		042B0ED92C1370CE00C713EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		042B0EDB2C1370CF00C713EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		042B0EDE2C1370CF00C713EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		042B0EBF2C1370CD00C713EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		042B0ECF2C1370CE00C713EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		042B0EB92C1370CC00C713EC = {
+			isa = PBXGroup;
+			children = (
+				042B0EC42C1370CD00C713EC /* TheCollector */,
+				042B0ED62C1370CE00C713EC /* TheCollector Watch App */,
+				042B0EC32C1370CD00C713EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		042B0EC32C1370CD00C713EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				042B0EC22C1370CD00C713EC /* TheCollector.app */,
+				042B0ED22C1370CE00C713EC /* TheCollector Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		042B0EC42C1370CD00C713EC /* TheCollector */ = {
+			isa = PBXGroup;
+			children = (
+				042B0EC52C1370CD00C713EC /* TheCollectorApp.swift */,
+				042B0EC72C1370CD00C713EC /* ContentView.swift */,
+				042B0EC92C1370CE00C713EC /* Assets.xcassets */,
+				042B0ECB2C1370CE00C713EC /* Preview Content */,
+			);
+			path = TheCollector;
+			sourceTree = "<group>";
+		};
+		042B0ECB2C1370CE00C713EC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				042B0ECC2C1370CE00C713EC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		042B0ED62C1370CE00C713EC /* TheCollector Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				042B0ED72C1370CE00C713EC /* TheCollectorApp.swift */,
+				042B0ED92C1370CE00C713EC /* ContentView.swift */,
+				042B0EDB2C1370CF00C713EC /* Assets.xcassets */,
+				042B0EDD2C1370CF00C713EC /* Preview Content */,
+			);
+			path = "TheCollector Watch App";
+			sourceTree = "<group>";
+		};
+		042B0EDD2C1370CF00C713EC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				042B0EDE2C1370CF00C713EC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		042B0EC12C1370CD00C713EC /* TheCollector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042B0EE62C1370CF00C713EC /* Build configuration list for PBXNativeTarget "TheCollector" */;
+			buildPhases = (
+				042B0EBE2C1370CD00C713EC /* Sources */,
+				042B0EBF2C1370CD00C713EC /* Frameworks */,
+				042B0EC02C1370CD00C713EC /* Resources */,
+				042B0EE52C1370CF00C713EC /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				042B0ED52C1370CE00C713EC /* PBXTargetDependency */,
+			);
+			name = TheCollector;
+			productName = TheCollector;
+			productReference = 042B0EC22C1370CD00C713EC /* TheCollector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		042B0ED12C1370CE00C713EC /* TheCollector Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042B0EE22C1370CF00C713EC /* Build configuration list for PBXNativeTarget "TheCollector Watch App" */;
+			buildPhases = (
+				042B0ECE2C1370CE00C713EC /* Sources */,
+				042B0ECF2C1370CE00C713EC /* Frameworks */,
+				042B0ED02C1370CE00C713EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TheCollector Watch App";
+			productName = "TheCollector Watch App";
+			productReference = 042B0ED22C1370CE00C713EC /* TheCollector Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		042B0EBA2C1370CC00C713EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					042B0EC12C1370CD00C713EC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					042B0ED12C1370CE00C713EC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 042B0EBD2C1370CC00C713EC /* Build configuration list for PBXProject "TheCollector" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 042B0EB92C1370CC00C713EC;
+			productRefGroup = 042B0EC32C1370CD00C713EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				042B0EC12C1370CD00C713EC /* TheCollector */,
+				042B0ED12C1370CE00C713EC /* TheCollector Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		042B0EC02C1370CD00C713EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042B0ECD2C1370CE00C713EC /* Preview Assets.xcassets in Resources */,
+				042B0ECA2C1370CE00C713EC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		042B0ED02C1370CE00C713EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042B0EDF2C1370CF00C713EC /* Preview Assets.xcassets in Resources */,
+				042B0EDC2C1370CF00C713EC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		042B0EBE2C1370CD00C713EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042B0EC82C1370CD00C713EC /* ContentView.swift in Sources */,
+				042B0EC62C1370CD00C713EC /* TheCollectorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		042B0ECE2C1370CE00C713EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042B0EDA2C1370CE00C713EC /* ContentView.swift in Sources */,
+				042B0ED82C1370CE00C713EC /* TheCollectorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		042B0ED52C1370CE00C713EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 042B0ED12C1370CE00C713EC /* TheCollector Watch App */;
+			targetProxy = 042B0ED42C1370CE00C713EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		042B0EE02C1370CF00C713EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		042B0EE12C1370CF00C713EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		042B0EE32C1370CF00C713EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheCollector Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = GNNA6PH896;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TheCollector;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.huyvu.TheCollector;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyvu.TheCollector.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		042B0EE42C1370CF00C713EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheCollector Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = GNNA6PH896;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TheCollector;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.huyvu.TheCollector;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyvu.TheCollector.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		042B0EE72C1370CF00C713EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheCollector/Preview Content\"";
+				DEVELOPMENT_TEAM = GNNA6PH896;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TheCollector;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyvu.TheCollector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		042B0EE82C1370CF00C713EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TheCollector/Preview Content\"";
+				DEVELOPMENT_TEAM = GNNA6PH896;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TheCollector;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyvu.TheCollector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		042B0EBD2C1370CC00C713EC /* Build configuration list for PBXProject "TheCollector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042B0EE02C1370CF00C713EC /* Debug */,
+				042B0EE12C1370CF00C713EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		042B0EE22C1370CF00C713EC /* Build configuration list for PBXNativeTarget "TheCollector Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042B0EE32C1370CF00C713EC /* Debug */,
+				042B0EE42C1370CF00C713EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		042B0EE62C1370CF00C713EC /* Build configuration list for PBXNativeTarget "TheCollector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042B0EE72C1370CF00C713EC /* Debug */,
+				042B0EE82C1370CF00C713EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 042B0EBA2C1370CC00C713EC /* Project object */;
+}
