@@ -1,6 +1,5 @@
 import SwiftUI
 import AVFoundation
-import WatchConnectivity
 
 struct ContentView: View {
     @State private var recording = false
@@ -22,7 +21,6 @@ struct ContentView: View {
         .onAppear {
             requestMicrophonePermission()
             setupRecorder()
-            setupWatchConnectivity()
         }
     }
 
@@ -73,46 +71,40 @@ struct ContentView: View {
         audioRecorder?.stop()
         recording = false
         if let audioURL = self.audioURL {
-            sendAudioToPhone(audioURL: audioURL)
+            uploadAudioToServer(audioURL: audioURL)
         }
     }
 
-    func setupWatchConnectivity() {
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = WatchSessionDelegate.shared
-            session.activate()
-        }
-    }
+    func uploadAudioToServer(audioURL: URL) {
+        let serverURL = URL(string: "http://10.147.19.11:8069/upload")!
+        var request = URLRequest(url: serverURL)
+        request.httpMethod = "POST"
 
-    func sendAudioToPhone(audioURL: URL) {
-        if WCSession.default.isReachable {
-            do {
-                let audioData = try Data(contentsOf: audioURL)
-                WCSession.default.sendMessageData(audioData, replyHandler: nil, errorHandler: { error in
-                    print("Error sending audio data: \(error.localizedDescription)")
-                })
-            } catch {
-                print("Error reading audio file: \(error.localizedDescription)")
+        let boundary = UUID().uuidString
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        var body = Data()
+        let filename = audioURL.lastPathComponent
+        let mimetype = "audio/m4a"
+
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: .utf8)!)
+        if let audioData = try? Data(contentsOf: audioURL) {
+            body.append(audioData)
+        }
+        body.append("\r\n".data(using: .utf8)!)
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+
+        URLSession.shared.uploadTask(with: request, from: body) { data, response, error in
+            if let error = error {
+                print("Failed to upload audio: \(error)")
+                return
             }
-        }
-    }
-}
-
-class WatchSessionDelegate: NSObject, WCSessionDelegate {
-    static let shared = WatchSessionDelegate()
-
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        if let error = error {
-            print("WCSession activation failed with error: \(error.localizedDescription)")
-        } else {
-            print("WCSession activated with state: \(activationState.rawValue)")
-        }
+            print("Audio uploaded successfully")
+        }.resume()
     }
 
-    func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
-        // Handle received message data
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
