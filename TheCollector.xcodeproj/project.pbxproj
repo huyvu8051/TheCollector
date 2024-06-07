@@ -16,6 +16,7 @@
 		042B0EDA2C1370CE00C713EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0ED92C1370CE00C713EC /* ContentView.swift */; };
 		042B0EDC2C1370CF00C713EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042B0EDB2C1370CF00C713EC /* Assets.xcassets */; };
 		042B0EDF2C1370CF00C713EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042B0EDE2C1370CF00C713EC /* Preview Assets.xcassets */; };
+		042B0EEA2C1386B000C713EC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0EE92C1386B000C713EC /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		042B0ED92C1370CE00C713EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		042B0EDB2C1370CF00C713EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042B0EDE2C1370CF00C713EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		042B0EE92C1386B000C713EC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				042B0ED92C1370CE00C713EC /* ContentView.swift */,
 				042B0EDB2C1370CF00C713EC /* Assets.xcassets */,
 				042B0EDD2C1370CF00C713EC /* Preview Content */,
+				042B0EE92C1386B000C713EC /* LocationManager.swift */,
 			);
 			path = "TheCollector Watch App";
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				042B0EDA2C1370CE00C713EC /* ContentView.swift in Sources */,
 				042B0ED82C1370CE00C713EC /* TheCollectorApp.swift in Sources */,
+				042B0EEA2C1386B000C713EC /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +388,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TheCollector;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationTemporaryUsageDescriptionDictionary = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to include it in the audio file name.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to record audio.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.huyvu.TheCollector;
@@ -415,6 +424,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TheCollector;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationTemporaryUsageDescriptionDictionary = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "We need your location to include it in the audio file name.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to include it in the audio file name.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone to record audio.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.huyvu.TheCollector;

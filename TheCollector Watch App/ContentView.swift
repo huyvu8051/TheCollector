@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var recording = false
     @State private var audioRecorder: AVAudioRecorder?
     @State private var audioURL: URL?
+    @StateObject private var locationManager = LocationManager()
 
     var body: some View {
         VStack {
@@ -44,7 +45,14 @@ struct ContentView: View {
         }
 
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documents.appendingPathComponent("recording.m4a")
+        
+        // Get current time
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
+        let currentTime = dateFormatter.string(from: Date())
+        
+        // Set the filename with location name and current time
+        let audioFilename = documents.appendingPathComponent("\(currentTime)_\(locationManager.locationName).m4a")
 
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -104,7 +112,6 @@ struct ContentView: View {
             print("Audio uploaded successfully")
         }.resume()
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
