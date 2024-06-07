@@ -55,7 +55,7 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
     }
 
     func uploadAudioToServer(audioURL: URL) {
-        let serverURL = URL(string: "https://yourserver.com/upload")!
+        let serverURL = URL(string: "http://localhost:8069/upload")!
         var request = URLRequest(url: serverURL)
         request.httpMethod = "POST"
 
@@ -83,6 +83,7 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
             print("Audio uploaded successfully")
         }.resume()
     }
+
 
     func sessionDidBecomeInactive(_ session: WCSession) {
         // Handle session inactive state
