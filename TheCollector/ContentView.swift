@@ -55,7 +55,7 @@ class WatchSessionDelegate: NSObject, WCSessionDelegate {
     }
 
     func uploadAudioToServer(audioURL: URL) {
-        let serverURL = URL(string: "http://localhost:8069/upload")!
+        let serverURL = URL(string: "http://10.147.19.11:8069/upload")!
         var request = URLRequest(url: serverURL)
         request.httpMethod = "POST"
 
