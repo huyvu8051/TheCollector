@@ -1,48 +1,46 @@
-//
-//  TheCollectorWidget.swift
-//  TheCollectorWidget
-//
-//  Created by huy on 6/8/24.
-//
-
 import WidgetKit
 import SwiftUI
 
-struct Provider: AppIntentTimelineProvider {
+struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), isRecording: false)
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+        let entry = SimpleEntry(date: Date(), isRecording: getRecordingStatus())
+        completion(entry)
     }
-    
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let entry = SimpleEntry(date: entryDate, isRecording: getRecordingStatus())
             entries.append(entry)
         }
 
-        return Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: entries, policy: .atEnd)
+        completion(timeline)
     }
 
-    func recommendations() -> [AppIntentRecommendation<ConfigurationAppIntent>] {
-        // Create an array with all the preconfigured widgets to show.
-        [AppIntentRecommendation(intent: ConfigurationAppIntent(), description: "Example Widget")]
+    private func getRecordingStatus() -> Bool {
+        let appGroupID = "group.com.huyvu.TheCollector"  // Use the correct App Group identifier
+        if let sharedDefaults = UserDefaults(suiteName: appGroupID) {
+            return sharedDefaults.bool(forKey: "isRecording")
+        }
+        return false
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
+    let isRecording: Bool
 }
 
-struct TheCollectorWidgetEntryView : View {
+struct TheCollectorWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
@@ -51,9 +49,9 @@ struct TheCollectorWidgetEntryView : View {
                 Text("Time:")
                 Text(entry.date, style: .time)
             }
-        
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+
+            Text("Recording:")
+            Text(entry.isRecording ? "Yes" : "No")
         }
     }
 }
@@ -63,30 +61,12 @@ struct TheCollectorWidget: Widget {
     let kind: String = "TheCollectorWidget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             TheCollectorWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .configurationDisplayName("The Collector Widget")
+        .description("Shows the recording status.")
+        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }
-
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
-}
-
-#Preview(as: .accessoryRectangular) {
-    TheCollectorWidget()
-} timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
-}    

@@ -9,6 +9,8 @@ struct ContentView: View {
     @StateObject private var locationManager = LocationManager()
     @State private var timer: Timer?
 
+    let appGroupID = "group.com.huyvu.TheCollector"
+
     var body: some View {
         VStack {
             Button(action: {
@@ -61,7 +63,7 @@ struct ContentView: View {
         let currentTime = dateFormatter.string(from: Date())
 
         // Set the filename with location name and current time
-        let audioFilename = documents.appendingPathComponent("\(currentTime)_\(locationManager.locationName).m4a")
+        let audioFilename = documents.appendingPathComponent("\(currentTime)_\(sanitizeLocationName(locationManager.locationName)).m4a")
 
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -84,6 +86,7 @@ struct ContentView: View {
         audioRecorder?.record()
         recording = true
         startTimer()
+        updateSharedRecordingStatus(true)
     }
 
     func stopRecording() {
@@ -93,6 +96,7 @@ struct ContentView: View {
         if let audioURL = self.audioURL {
             uploadAudioToServer(audioURL: audioURL)
         }
+        updateSharedRecordingStatus(false)
     }
 
     func startTimer() {
@@ -159,6 +163,18 @@ struct ContentView: View {
                 }
             }
         }.resume()
+    }
+
+    func updateSharedRecordingStatus(_ isRecording: Bool) {
+        if let sharedDefaults = UserDefaults(suiteName: appGroupID) {
+            sharedDefaults.set(isRecording, forKey: "isRecording")
+            sharedDefaults.synchronize()
+        }
+    }
+
+    func sanitizeLocationName(_ locationName: String) -> String {
+        let invalidCharacters = CharacterSet(charactersIn: ", ")
+        return locationName.components(separatedBy: invalidCharacters).joined(separator: "_")
     }
 }
 

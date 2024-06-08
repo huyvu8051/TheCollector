@@ -75,6 +75,9 @@
 		040EB3D52C145AD6005AE8A9 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		040EB3D72C145AD7005AE8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040EB3D92C145AD7005AE8A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040EB3E22C146DF1005AE8A9 /* TheCollector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheCollector.entitlements; sourceTree = "<group>"; };
+		040EB3E32C146E62005AE8A9 /* TheCollector Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TheCollector Watch App.entitlements"; sourceTree = "<group>"; };
+		040EB3E42C146E6D005AE8A9 /* TheCollectorWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheCollectorWidgetExtension.entitlements; sourceTree = "<group>"; };
 		042B0EC22C1370CD00C713EC /* TheCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		042B0EC52C1370CD00C713EC /* TheCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCollectorApp.swift; sourceTree = "<group>"; };
 		042B0EC72C1370CD00C713EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		042B0EB92C1370CC00C713EC = {
 			isa = PBXGroup;
 			children = (
+				040EB3E42C146E6D005AE8A9 /* TheCollectorWidgetExtension.entitlements */,
 				042B0EC42C1370CD00C713EC /* TheCollector */,
 				042B0ED62C1370CE00C713EC /* TheCollector Watch App */,
 				040EB3D22C145AD6005AE8A9 /* TheCollectorWidget */,
@@ -159,6 +163,7 @@
 		042B0EC42C1370CD00C713EC /* TheCollector */ = {
 			isa = PBXGroup;
 			children = (
+				040EB3E22C146DF1005AE8A9 /* TheCollector.entitlements */,
 				042B0EC52C1370CD00C713EC /* TheCollectorApp.swift */,
 				042B0EC72C1370CD00C713EC /* ContentView.swift */,
 				042B0EC92C1370CE00C713EC /* Assets.xcassets */,
@@ -178,6 +183,7 @@
 		042B0ED62C1370CE00C713EC /* TheCollector Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				040EB3E32C146E62005AE8A9 /* TheCollector Watch App.entitlements */,
 				042B0ED72C1370CE00C713EC /* TheCollectorApp.swift */,
 				042B0ED92C1370CE00C713EC /* ContentView.swift */,
 				042B0EDB2C1370CF00C713EC /* Assets.xcassets */,
@@ -373,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TheCollectorWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GNNA6PH896;
@@ -403,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TheCollectorWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GNNA6PH896;
@@ -552,6 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_ENTITLEMENTS = "TheCollector Watch App/TheCollector Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheCollector Watch App/Preview Content\"";
@@ -591,6 +600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_ENTITLEMENTS = "TheCollector Watch App/TheCollector Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheCollector Watch App/Preview Content\"";
@@ -631,6 +641,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_ENTITLEMENTS = TheCollector/TheCollector.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -668,6 +679,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				CODE_SIGN_ENTITLEMENTS = TheCollector/TheCollector.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
