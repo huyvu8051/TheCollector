@@ -5,6 +5,8 @@ struct ContentView: View {
     @State private var recording = false
     @State private var audioRecorder: AVAudioRecorder?
     @State private var audioURL: URL?
+    @State private var showAlert = false
+    @State private var alertMessage = ""
     @StateObject private var locationManager = LocationManager()
 
     var body: some View {
@@ -21,7 +23,9 @@ struct ContentView: View {
         }
         .onAppear {
             requestMicrophonePermission()
-            setupRecorder()
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Server Response"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
 
@@ -45,12 +49,12 @@ struct ContentView: View {
         }
 
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        
+
         // Get current time
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
         let currentTime = dateFormatter.string(from: Date())
-        
+
         // Set the filename with location name and current time
         let audioFilename = documents.appendingPathComponent("\(currentTime)_\(locationManager.locationName).m4a")
 
@@ -71,6 +75,7 @@ struct ContentView: View {
     }
 
     func startRecording() {
+        setupRecorder()
         audioRecorder?.record()
         recording = true
     }
@@ -106,10 +111,30 @@ struct ContentView: View {
 
         URLSession.shared.uploadTask(with: request, from: body) { data, response, error in
             if let error = error {
-                print("Failed to upload audio: \(error)")
+                DispatchQueue.main.async {
+                    self.alertMessage = "Failed to upload audio: \(error.localizedDescription)"
+                    self.showAlert = true
+                }
                 return
             }
-            print("Audio uploaded successfully")
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                    DispatchQueue.main.async {
+                        self.alertMessage = responseString
+                        self.showAlert = true
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.alertMessage = "Audio uploaded successfully"
+                        self.showAlert = true
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Failed to upload audio. Server returned an error."
+                    self.showAlert = true
+                }
+            }
         }.resume()
     }
 }
