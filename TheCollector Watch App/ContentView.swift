@@ -96,7 +96,7 @@ struct ContentView: View {
     }
 
     func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 600.0, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { _ in
             self.chunkAndRestartRecording()
         }
     }
