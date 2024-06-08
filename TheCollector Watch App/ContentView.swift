@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 import AVFoundation
 
 struct ContentView: View {
@@ -170,6 +171,7 @@ struct ContentView: View {
             sharedDefaults.set(isRecording, forKey: "isRecording")
             sharedDefaults.synchronize()
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func sanitizeLocationName(_ locationName: String) -> String {

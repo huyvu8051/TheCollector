@@ -13,9 +13,8 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
         var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
+
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, isRecording: getRecordingStatus())
@@ -27,7 +26,7 @@ struct Provider: TimelineProvider {
     }
 
     private func getRecordingStatus() -> Bool {
-        let appGroupID = "group.com.huyvu.TheCollector"  // Use the correct App Group identifier
+        let appGroupID = "group.com.huyvu.TheCollector"
         if let sharedDefaults = UserDefaults(suiteName: appGroupID) {
             return sharedDefaults.bool(forKey: "isRecording")
         }
