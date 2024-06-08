@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040EB3CF2C145AD6005AE8A9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040EB3CE2C145AD6005AE8A9 /* WidgetKit.framework */; };
+		040EB3D12C145AD6005AE8A9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040EB3D02C145AD6005AE8A9 /* SwiftUI.framework */; };
+		040EB3D42C145AD6005AE8A9 /* TheCollectorWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EB3D32C145AD6005AE8A9 /* TheCollectorWidget.swift */; };
+		040EB3D62C145AD6005AE8A9 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EB3D52C145AD6005AE8A9 /* AppIntent.swift */; };
+		040EB3D82C145AD7005AE8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040EB3D72C145AD7005AE8A9 /* Assets.xcassets */; };
+		040EB3DC2C145AD7005AE8A9 /* TheCollectorWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 040EB3CC2C145AD6005AE8A9 /* TheCollectorWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		042B0EC62C1370CD00C713EC /* TheCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0EC52C1370CD00C713EC /* TheCollectorApp.swift */; };
 		042B0EC82C1370CD00C713EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0EC72C1370CD00C713EC /* ContentView.swift */; };
 		042B0ECA2C1370CE00C713EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042B0EC92C1370CE00C713EC /* Assets.xcassets */; };
@@ -20,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		040EB3DA2C145AD7005AE8A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 042B0EBA2C1370CC00C713EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040EB3CB2C145AD6005AE8A9;
+			remoteInfo = TheCollectorWidgetExtension;
+		};
 		042B0ED42C1370CE00C713EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 042B0EBA2C1370CC00C713EC /* Project object */;
@@ -30,6 +43,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		040EB3DD2C145AD7005AE8A9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				040EB3DC2C145AD7005AE8A9 /* TheCollectorWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		042B0EE52C1370CF00C713EC /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,6 +68,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		040EB3CC2C145AD6005AE8A9 /* TheCollectorWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TheCollectorWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		040EB3CE2C145AD6005AE8A9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		040EB3D02C145AD6005AE8A9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		040EB3D32C145AD6005AE8A9 /* TheCollectorWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCollectorWidget.swift; sourceTree = "<group>"; };
+		040EB3D52C145AD6005AE8A9 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		040EB3D72C145AD7005AE8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		040EB3D92C145AD7005AE8A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		042B0EC22C1370CD00C713EC /* TheCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		042B0EC52C1370CD00C713EC /* TheCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCollectorApp.swift; sourceTree = "<group>"; };
 		042B0EC72C1370CD00C713EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +89,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		040EB3C92C145AD6005AE8A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040EB3D12C145AD6005AE8A9 /* SwiftUI.framework in Frameworks */,
+				040EB3CF2C145AD6005AE8A9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		042B0EBF2C1370CD00C713EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,11 +115,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040EB3CD2C145AD6005AE8A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				040EB3CE2C145AD6005AE8A9 /* WidgetKit.framework */,
+				040EB3D02C145AD6005AE8A9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		040EB3D22C145AD6005AE8A9 /* TheCollectorWidget */ = {
+			isa = PBXGroup;
+			children = (
+				040EB3D32C145AD6005AE8A9 /* TheCollectorWidget.swift */,
+				040EB3D52C145AD6005AE8A9 /* AppIntent.swift */,
+				040EB3D72C145AD7005AE8A9 /* Assets.xcassets */,
+				040EB3D92C145AD7005AE8A9 /* Info.plist */,
+			);
+			path = TheCollectorWidget;
+			sourceTree = "<group>";
+		};
 		042B0EB92C1370CC00C713EC = {
 			isa = PBXGroup;
 			children = (
 				042B0EC42C1370CD00C713EC /* TheCollector */,
 				042B0ED62C1370CE00C713EC /* TheCollector Watch App */,
+				040EB3D22C145AD6005AE8A9 /* TheCollectorWidget */,
+				040EB3CD2C145AD6005AE8A9 /* Frameworks */,
 				042B0EC32C1370CD00C713EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +151,7 @@
 			children = (
 				042B0EC22C1370CD00C713EC /* TheCollector.app */,
 				042B0ED22C1370CE00C713EC /* TheCollector Watch App.app */,
+				040EB3CC2C145AD6005AE8A9 /* TheCollectorWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +198,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		040EB3CB2C145AD6005AE8A9 /* TheCollectorWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040EB3E02C145AD7005AE8A9 /* Build configuration list for PBXNativeTarget "TheCollectorWidgetExtension" */;
+			buildPhases = (
+				040EB3C82C145AD6005AE8A9 /* Sources */,
+				040EB3C92C145AD6005AE8A9 /* Frameworks */,
+				040EB3CA2C145AD6005AE8A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheCollectorWidgetExtension;
+			productName = TheCollectorWidgetExtension;
+			productReference = 040EB3CC2C145AD6005AE8A9 /* TheCollectorWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		042B0EC12C1370CD00C713EC /* TheCollector */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042B0EE62C1370CF00C713EC /* Build configuration list for PBXNativeTarget "TheCollector" */;
@@ -161,10 +241,12 @@
 				042B0ECE2C1370CE00C713EC /* Sources */,
 				042B0ECF2C1370CE00C713EC /* Frameworks */,
 				042B0ED02C1370CE00C713EC /* Resources */,
+				040EB3DD2C145AD7005AE8A9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				040EB3DB2C145AD7005AE8A9 /* PBXTargetDependency */,
 			);
 			name = "TheCollector Watch App";
 			productName = "TheCollector Watch App";
@@ -181,6 +263,9 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					040EB3CB2C145AD6005AE8A9 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					042B0EC12C1370CD00C713EC = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -204,11 +289,20 @@
 			targets = (
 				042B0EC12C1370CD00C713EC /* TheCollector */,
 				042B0ED12C1370CE00C713EC /* TheCollector Watch App */,
+				040EB3CB2C145AD6005AE8A9 /* TheCollectorWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		040EB3CA2C145AD6005AE8A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040EB3D82C145AD7005AE8A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		042B0EC02C1370CD00C713EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,6 +324,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		040EB3C82C145AD6005AE8A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040EB3D42C145AD6005AE8A9 /* TheCollectorWidget.swift in Sources */,
+				040EB3D62C145AD6005AE8A9 /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		042B0EBE2C1370CD00C713EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +355,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		040EB3DB2C145AD7005AE8A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040EB3CB2C145AD6005AE8A9 /* TheCollectorWidgetExtension */;
+			targetProxy = 040EB3DA2C145AD7005AE8A9 /* PBXContainerItemProxy */;
+		};
 		042B0ED52C1370CE00C713EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 042B0ED12C1370CE00C713EC /* TheCollector Watch App */;
@@ -260,6 +368,67 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		040EB3DE2C145AD7005AE8A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNA6PH896;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheCollectorWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TheCollectorWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyvu.TheCollector.watchkitapp.TheCollectorWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		040EB3DF2C145AD7005AE8A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNA6PH896;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheCollectorWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TheCollectorWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyvu.TheCollector.watchkitapp.TheCollectorWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 		042B0EE02C1370CF00C713EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -379,6 +548,7 @@
 		042B0EE32C1370CF00C713EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
@@ -417,6 +587,7 @@
 		042B0EE42C1370CF00C713EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
@@ -531,6 +702,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		040EB3E02C145AD7005AE8A9 /* Build configuration list for PBXNativeTarget "TheCollectorWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040EB3DE2C145AD7005AE8A9 /* Debug */,
+				040EB3DF2C145AD7005AE8A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		042B0EBD2C1370CC00C713EC /* Build configuration list for PBXProject "TheCollector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
