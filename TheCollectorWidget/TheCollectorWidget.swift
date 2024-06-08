@@ -44,14 +44,10 @@ struct TheCollectorWidgetEntryView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Text("Time:")
-                Text(entry.date, style: .time)
-            }
-
             Text("Recording:")
             Text(entry.isRecording ? "Yes" : "No")
         }
+        .containerBackground(.fill.tertiary, for: .widget)
     }
 }
 
@@ -67,5 +63,12 @@ struct TheCollectorWidget: Widget {
         .configurationDisplayName("The Collector Widget")
         .description("Shows the recording status.")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
+    }
+}
+
+struct TheCollectorWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        TheCollectorWidgetEntryView(entry: SimpleEntry(date: Date(), isRecording: false))
+            .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }
 }

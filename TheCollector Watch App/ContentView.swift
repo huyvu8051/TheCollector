@@ -145,6 +145,7 @@ struct ContentView: View {
             if let error = error {
                 DispatchQueue.main.async {
                     self.responseMessage = "Failed to upload audio: \(error.localizedDescription)"
+                    self.updateSharedResponseMessage(self.responseMessage)
                 }
                 return
             }
@@ -152,15 +153,18 @@ struct ContentView: View {
                 if let data = data, let responseString = String(data: data, encoding: .utf8) {
                     DispatchQueue.main.async {
                         self.responseMessage = responseString
+                        self.updateSharedResponseMessage(self.responseMessage)
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.responseMessage = "Audio uploaded successfully"
+                        self.updateSharedResponseMessage(self.responseMessage)
                     }
                 }
             } else {
                 DispatchQueue.main.async {
                     self.responseMessage = "Failed to upload audio. Server returned an error."
+                    self.updateSharedResponseMessage(self.responseMessage)
                 }
             }
         }.resume()
@@ -169,6 +173,14 @@ struct ContentView: View {
     func updateSharedRecordingStatus(_ isRecording: Bool) {
         if let sharedDefaults = UserDefaults(suiteName: appGroupID) {
             sharedDefaults.set(isRecording, forKey: "isRecording")
+            sharedDefaults.synchronize()
+        }
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+
+    func updateSharedResponseMessage(_ message: String) {
+        if let sharedDefaults = UserDefaults(suiteName: appGroupID) {
+            sharedDefaults.set(message, forKey: "responseMessage")
             sharedDefaults.synchronize()
         }
         WidgetCenter.shared.reloadAllTimelines()
