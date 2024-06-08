@@ -3,11 +3,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), isRecording: false)
+        SimpleEntry(date: Date(), isRecording: false,responseMessage: "Hello world.")
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date(), isRecording: getRecordingStatus())
+        let entry = SimpleEntry(date: Date(), isRecording: getRecordingStatus(), responseMessage: getResponseMessage())
         completion(entry)
     }
 
@@ -17,7 +17,7 @@ struct Provider: TimelineProvider {
 
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, isRecording: getRecordingStatus())
+            let entry = SimpleEntry(date: entryDate, isRecording: getRecordingStatus(), responseMessage: getResponseMessage())
             entries.append(entry)
         }
 
@@ -32,11 +32,20 @@ struct Provider: TimelineProvider {
         }
         return false
     }
+    
+    private func getResponseMessage() -> String {
+        let appGroupID = "group.com.huyvu.TheCollector"
+        if let sharedDefaults = UserDefaults(suiteName: appGroupID) {
+            return sharedDefaults.string(forKey: "responseMessage") ?? ""
+        }
+        return ""
+    }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let isRecording: Bool
+    let responseMessage: String
 }
 
 struct TheCollectorWidgetEntryView: View {
@@ -44,8 +53,7 @@ struct TheCollectorWidgetEntryView: View {
 
     var body: some View {
         VStack {
-            Text("Recording:")
-            Text(entry.isRecording ? "Yes" : "No")
+            Text("\(entry.isRecording ? "🔴" : "⭕️") \(entry.responseMessage)")
         }
         .containerBackground(.fill.tertiary, for: .widget)
     }
@@ -68,7 +76,7 @@ struct TheCollectorWidget: Widget {
 
 struct TheCollectorWidget_Previews: PreviewProvider {
     static var previews: some View {
-        TheCollectorWidgetEntryView(entry: SimpleEntry(date: Date(), isRecording: false))
+        TheCollectorWidgetEntryView(entry: SimpleEntry(date: Date(), isRecording: false, responseMessage: "Hello world."))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }
 }

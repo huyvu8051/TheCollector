@@ -101,7 +101,7 @@ struct ContentView: View {
     }
 
     func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { _ in
             self.chunkAndRestartRecording()
         }
     }
@@ -150,9 +150,9 @@ struct ContentView: View {
                 return
             }
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                if let data = data, let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []), let jsonDict = jsonResponse as? [String: Any], let transcript = jsonDict["transcript"] as? String {
                     DispatchQueue.main.async {
-                        self.responseMessage = responseString
+                        self.responseMessage = transcript
                         self.updateSharedResponseMessage(self.responseMessage)
                     }
                 } else {
