@@ -75,9 +75,9 @@ struct ContentView: View {
     }
 
     func startRecording() {
+        recording = true
         setupRecorder()
         audioRecorder?.record()
-        recording = true
     }
 
     func stopRecording() {
