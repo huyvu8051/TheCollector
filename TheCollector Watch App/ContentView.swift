@@ -5,9 +5,9 @@ struct ContentView: View {
     @State private var recording = false
     @State private var audioRecorder: AVAudioRecorder?
     @State private var audioURL: URL?
-    @State private var showAlert = false
-    @State private var alertMessage = ""
+    @State private var responseMessage = ""
     @StateObject private var locationManager = LocationManager()
+    @State private var timer: Timer?
 
     var body: some View {
         VStack {
@@ -20,12 +20,17 @@ struct ContentView: View {
             }) {
                 Text(self.recording ? "Stop Recording" : "Start Recording")
             }
+            .padding()
+
+            if !responseMessage.isEmpty {
+                Text(responseMessage)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+            }
         }
         .onAppear {
             requestMicrophonePermission()
-        }
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text("Server Response"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
 
@@ -75,17 +80,39 @@ struct ContentView: View {
     }
 
     func startRecording() {
-        recording = true
         setupRecorder()
         audioRecorder?.record()
+        recording = true
+        startTimer()
     }
 
     func stopRecording() {
+        stopTimer()
         audioRecorder?.stop()
         recording = false
         if let audioURL = self.audioURL {
             uploadAudioToServer(audioURL: audioURL)
         }
+    }
+
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { _ in
+            self.chunkAndRestartRecording()
+        }
+    }
+
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+
+    func chunkAndRestartRecording() {
+        audioRecorder?.stop()
+        if let audioURL = self.audioURL {
+            uploadAudioToServer(audioURL: audioURL)
+        }
+        setupRecorder()  // Set up recorder again without creating a new timer
+        audioRecorder?.record()
     }
 
     func uploadAudioToServer(audioURL: URL) {
@@ -112,27 +139,23 @@ struct ContentView: View {
         URLSession.shared.uploadTask(with: request, from: body) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    self.alertMessage = "Failed to upload audio: \(error.localizedDescription)"
-                    self.showAlert = true
+                    self.responseMessage = "Failed to upload audio: \(error.localizedDescription)"
                 }
                 return
             }
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                 if let data = data, let responseString = String(data: data, encoding: .utf8) {
                     DispatchQueue.main.async {
-                        self.alertMessage = responseString
-                        self.showAlert = true
+                        self.responseMessage = responseString
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.alertMessage = "Audio uploaded successfully"
-                        self.showAlert = true
+                        self.responseMessage = "Audio uploaded successfully"
                     }
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.alertMessage = "Failed to upload audio. Server returned an error."
-                    self.showAlert = true
+                    self.responseMessage = "Failed to upload audio. Server returned an error."
                 }
             }
         }.resume()
