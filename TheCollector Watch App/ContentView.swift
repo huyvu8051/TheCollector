@@ -6,14 +6,28 @@ struct ContentView: View {
     @State private var recording = false
     @State private var audioRecorder: AVAudioRecorder?
     @State private var audioURL: URL?
-    @State private var responseMessage = ""
+    @State private var responseMessage: String
     @StateObject private var locationManager = LocationManager()
     @State private var timer: Timer?
 
     let appGroupID = "group.com.huyvu.TheCollector"
 
+    init(responseMessage: String = "") {
+        _responseMessage = State(initialValue: responseMessage)
+    }
+
     var body: some View {
         VStack {
+            ScrollView {
+                if !responseMessage.isEmpty {
+                    Text(responseMessage)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                        .font(.system(size: 10))
+                }
+            }
+            Spacer()
             Button(action: {
                 if self.recording {
                     self.stopRecording()
@@ -23,28 +37,21 @@ struct ContentView: View {
             }) {
                 Text(self.recording ? "Stop Recording" : "Start Recording")
             }
-            .padding()
-
-            if !responseMessage.isEmpty {
-                Text(responseMessage)
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(8)
-            }
         }
         .onAppear {
             requestMicrophonePermission()
         }
     }
-
+    
     func requestMicrophonePermission() {
-        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+        AVAudioApplication.requestRecordPermission(completionHandler:{granted in
             if granted {
                 print("Microphone permission granted")
             } else {
                 print("Microphone permission denied")
             }
-        }
+        })
+        
     }
 
     func setupRecorder() {
@@ -194,6 +201,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(responseMessage: "This is a dummy response message for preview purposes.")
     }
 }
